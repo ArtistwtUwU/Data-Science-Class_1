@@ -35,3 +35,13 @@ print(relation)
 x_text <- data.frame(x= data1_test$x)
 result <- predict(relation,x_text)
 print(result)
+
+mape <- mean(abs((data1_test$y -result)/data1_test$y)*100)
+cat("The error - MAPE is: ", round(mape,digit=2),"%\n")
+
+actuals_preds <- data.frame(cbind(actuals=data1_test$y,
+                                  predicteds=result))
+
+mape <- mean(abs(actuals_preds$actuals - actuals_preds$predicteds )/
+               actuals_preds$actuals)*100
+cat("The error - MAPE is: ", round(mape,digit=2),"%")
