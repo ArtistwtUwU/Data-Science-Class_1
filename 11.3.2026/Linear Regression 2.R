@@ -1,3 +1,4 @@
+#Income Happiness
 library(readr)
 
 df <- read_csv("D:/Repos/Data-Science-Class/11.3.2026/income_happiness.csv")
